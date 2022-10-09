@@ -7,7 +7,7 @@ export const Navbar = () => {
   return (
     <div className="navbar">
       <ul>
-        <li>
+        <li className="logo">
           <img src={Temple} alt="devscope synergy logo" />
           <span>DevScope Synergy</span>
         </li>
