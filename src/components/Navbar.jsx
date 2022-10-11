@@ -1,16 +1,13 @@
 // Styles and images
 import { Link } from 'react-router-dom';
 import Temple from '../assets/temple.svg';
+import { useAuthContext } from '../hooks/useAuthContext';
 import { useLogout } from '../hooks/useLogout';
 import './Navbar.css';
 
 export const Navbar = () => {
   const { logout, isPending } = useLogout();
-
-  const handleLogout = () => {
-    logout();
-    console.log(isPending);
-  };
+  const { user } = useAuthContext();
 
   return (
     <div className="navbar">
@@ -19,23 +16,31 @@ export const Navbar = () => {
           <img src={Temple} alt="devscope synergy logo" />
           <span>DevScope Synergy</span>
         </li>
-        <li>
-          <Link to={'/login'}>Login</Link>
-          <Link to={'/signup'}>signup</Link>
-        </li>
+        {!user && (
+          <>
+            <li>
+              <Link to={'/login'}>Login</Link>
+            </li>
 
-        <li>
-          {isPending && (
-            <button className="btn" disabled>
-              Logging out
-            </button>
-          )}
-          {!isPending && (
-            <button className="btn" onClick={handleLogout}>
-              Logout
-            </button>
-          )}
-        </li>
+            <li>
+              <Link to={'/signup'}>signup</Link>
+            </li>
+          </>
+        )}
+        {user && (
+          <li>
+            {isPending && (
+              <button className="btn" disabled>
+                Logging out
+              </button>
+            )}
+            {!isPending && (
+              <button className="btn" onClick={logout}>
+                Logout
+              </button>
+            )}
+          </li>
+        )}
       </ul>
     </div>
   );

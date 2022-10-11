@@ -1,6 +1,6 @@
 // styles
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLogin } from '../../hooks/useLogin';
 import './Login.css';
 
@@ -14,6 +14,7 @@ export const Login = () => {
     e.preventDefault();
     login(email, password);
     console.log('log in successful,');
+    // TODO add a notification modal here
     setTimeout(() => {
       navigate('/');
     }, 3000);
@@ -49,6 +50,9 @@ export const Login = () => {
         </button>
       )}
       {error && <div className="error">{error}</div>}
+      <p className="login-option">
+        don't have an account yet? <Link to="/signup">signup here</Link>
+      </p>
     </form>
   );
 };

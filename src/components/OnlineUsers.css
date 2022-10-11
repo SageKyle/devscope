@@ -1,0 +1,29 @@
+.user-list {
+  width: 25rem;
+  max-width: 25%;
+  padding: 3rem;
+  box-sizing: border-box;
+  background-color: #fbfbfb;
+  color: var(--heading-color);
+}
+
+.user-list h2 {
+  text-align: right;
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  font-size: 1.8rem;
+}
+
+.user-list-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.user-list-item .avatar {
+  margin-left: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
