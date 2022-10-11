@@ -1,9 +1,17 @@
 // Styles and images
 import { Link } from 'react-router-dom';
 import Temple from '../assets/temple.svg';
+import { useLogout } from '../hooks/useLogout';
 import './Navbar.css';
 
 export const Navbar = () => {
+  const { logout, isPending } = useLogout();
+
+  const handleLogout = () => {
+    logout();
+    console.log(isPending);
+  };
+
   return (
     <div className="navbar">
       <ul>
@@ -17,7 +25,16 @@ export const Navbar = () => {
         </li>
 
         <li>
-          <button className="btn">Logout</button>
+          {isPending && (
+            <button className="btn" disabled>
+              Logging out
+            </button>
+          )}
+          {!isPending && (
+            <button className="btn" onClick={handleLogout}>
+              Logout
+            </button>
+          )}
         </li>
       </ul>
     </div>
