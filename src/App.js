@@ -3,8 +3,8 @@ import './App.css';
 
 // pages and components
 import { Navbar } from './components/Navbar';
-import { Sidebar } from './components/Sidebar';
 import { OnlineUsers } from './components/OnlineUsers';
+import { Sidebar } from './components/Sidebar';
 import { Create } from './pages/create/Create';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { Login } from './pages/login/Login';
@@ -29,7 +29,7 @@ function App() {
               <Route element={<Create />} path="/create" />
               <Route element={<Login />} path="/login" />
               <Route element={<Signup />} path="/signup" />
-              <Route element={<Project />} path="/project/:id" />
+              <Route element={<Project />} path="/projects/:id" />
             </Routes>
           </div>
           {user && <OnlineUsers />}

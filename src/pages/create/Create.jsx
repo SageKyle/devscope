@@ -5,6 +5,7 @@ import Select from 'react-select';
 import { timestamp } from '../../firebase/config';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import { useCollection } from '../../hooks/useCollection';
+import { useFirestore } from '../../hooks/useFirestore';
 import './Create.css';
 
 const categories = [
@@ -19,7 +20,7 @@ export const Create = () => {
   const [users, setUsers] = useState([]);
   const { user } = useAuthContext();
   const navigate = useNavigate();
-  // const {}
+  const { addDocument, response } = useFirestore('projects');
 
   // form fields states
   const [name, setName] = useState('');
@@ -29,6 +30,7 @@ export const Create = () => {
   const [assignedUsers, setAssignedUsers] = useState([]);
   const [formError, setFormError] = useState(null);
 
+  // check if we have users in the database
   useEffect(() => {
     if (documents) {
       const options = documents.map((user) => {
@@ -38,26 +40,31 @@ export const Create = () => {
     }
   }, [documents]);
 
-  const handleSubmit = (e) => {
+  //  upload project
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormError(null);
 
+    // make sure the project has a category
     if (!category) {
       setFormError('Please select a project category');
       return;
     }
 
+    // make sure project has at least 1 assigned user(s)
     if (assignedUsers.length < 1) {
       setFormError('Please assign project to at least 1 user');
       return;
     }
 
+    // project initiator info
     const createdBy = {
       displayName: user.displayName,
       photoURL: user.photoURL,
       id: user.uid,
     };
 
+    // new object containing info of assigned users
     const assignedUsersList = assignedUsers.map((user) => {
       return {
         displayName: user.value.displayName,
@@ -66,6 +73,7 @@ export const Create = () => {
       };
     });
 
+    // new project object
     const project = {
       name,
       details,
@@ -76,10 +84,15 @@ export const Create = () => {
       assignedUsersList,
     };
 
-    console.log(project);
-    setTimeout(() => {
-      navigate('/');
-    }, 3000);
+    await addDocument(project);
+
+    if (!response.error) {
+      // TODO add notofication here
+      console.log(project);
+      setTimeout(() => {
+        navigate('/');
+      }, 3000);
+    }
   };
 
   return (
