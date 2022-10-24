@@ -1,0 +1,92 @@
+.project-details {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	align-items: flex-start;
+	gap: 6rem;
+}
+
+/* project summary */
+.project-summary {
+	background-color: #fff;
+	padding: 3rem;
+	border-radius: 0.4rem;
+}
+
+.project-summary .due-date {
+	font-size: 1.8rem;
+	margin: 1rem 0;
+	color: var(--title-color);
+}
+
+.details {
+	margin: 3rem 0;
+	color: var(--text-color);
+	line-height: 1.2;
+	font-size: 1.8rem;
+}
+
+.project-summary h4 {
+	color: var(--text-color);
+	font-size: 1.8rem;
+	margin-bottom: 2rem;
+}
+
+.assigned-users {
+	display: flex;
+	margin-top: 2rem;
+}
+
+.assigned-users .avatar {
+	margin-right: 1rem;
+}
+
+.project-summary + .btn {
+	margin-top: 2rem;
+}
+
+/* project comment (Add) */
+.project-comments label {
+	margin-bottom: 0;
+}
+
+.project-comments textarea {
+	min-height: 4rem;
+	font-size: 1.5rem;
+}
+
+/* project comments (List) */
+.project-comments h4 {
+	color: var(--heading-color);
+}
+
+.project-comments li {
+	padding: 1.6rem;
+	border-radius: 0.4rem;
+	border: 0.1rem solid #f2f2f2;
+	margin-top: 2rem;
+	box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.05);
+	background-color: #fff;
+}
+
+.comment-author {
+	display: flex;
+	/* align-items: center; */
+	color: var(--title-color);
+}
+
+.comment-author .avatar {
+	width: 3rem;
+	height: 3rem;
+	margin-right: 1rem;
+}
+
+.comment-date {
+	color: var(--text-color);
+	font-size: 1.8rem;
+	margin: 0.4rem 0 1rem;
+}
+
+.comment-content {
+	color: var(--text-color);
+	font-size: 1.8rem;
+}

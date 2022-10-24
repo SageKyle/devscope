@@ -14,29 +14,38 @@ import { Signup } from './pages/signup/Signup';
 import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
-  const { user, authIsReady } = useAuthContext();
+	const { user, authIsReady } = useAuthContext();
 
-  return (
-    <div className="App">
-      {authIsReady && (
-        // TODO setup protected routes
-        <BrowserRouter>
-          {user && <Sidebar />}
-          <div className="container">
-            <Navbar />
-            <Routes>
-              <Route element={<Dashboard />} path="/" />
-              <Route element={<Create />} path="/create" />
-              <Route element={<Login />} path="/login" />
-              <Route element={<Signup />} path="/signup" />
-              <Route element={<Project />} path="/projects/:id" />
-            </Routes>
-          </div>
-          {user && <OnlineUsers />}
-        </BrowserRouter>
-      )}
-    </div>
-  );
+	return (
+		<div className="App">
+			{authIsReady && (
+				// TODO setup protected routes
+				<BrowserRouter>
+					{user && <Sidebar />}
+					<div className="container">
+						<Navbar />
+						<Routes>
+							<Route element={user ? <Dashboard /> : <Login />} path="/" />
+							<Route element={user ? <Create /> : <Login />} path="/create" />
+							<Route
+								element={!user ? <Login /> : <Dashboard />}
+								path="/login"
+							/>
+							<Route
+								element={!user ? <Signup /> : <Dashboard />}
+								path="/signup"
+							/>
+							<Route
+								element={user ? <Project /> : <Login />}
+								path="/projects/:id"
+							/>
+						</Routes>
+					</div>
+					{user && <OnlineUsers />}
+				</BrowserRouter>
+			)}
+		</div>
+	);
 }
 
 export default App;
