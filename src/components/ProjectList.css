@@ -1,39 +1,40 @@
 .projects {
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-  gap: 2rem;
+	margin-top: 4rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+	gap: 2rem;
 }
 
 .projects a {
-  background-color: #fff;
-  padding: 1.6rem;
-  border-radius: 0.6rem;
-  box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.05);
-  text-decoration: none;
-  color: inherit;
+	background-color: #fff;
+	padding: 1.6rem;
+	border-radius: 0.6rem;
+	box-shadow: 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.05);
+	text-decoration: none;
+	color: inherit;
 }
 
 .projects h4 {
-  font-size: 1.8rem;
-  color: var(--heading-color);
+	font-size: 1.8rem;
+	color: var(--heading-color);
 }
 
 .projects p {
-  color: var(--text-color);
-  font-size: 1.6rem;
+	color: var(--text-color);
+	font-size: 1.6rem;
 }
 
-.projects .assigned-to {
-  margin: 1rem 0;
-  display: flex;
+.projects .assigned-to ul {
+	margin: 1rem 0;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .projects li {
-  margin-right: 1rem;
+	margin-right: 1rem;
 }
 
 .assigned-to .avatar {
-  width: 3rem;
-  height: 3rem;
+	width: 3rem;
+	height: 3rem;
 }

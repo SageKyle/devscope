@@ -39,10 +39,12 @@ export const ProjectComments = ({ project }) => {
 					project.comments.map((comment) => (
 						<li key={comment.id}>
 							<div className="comment-author">
-								<Avatar src={comment.photoURL} />
-								<p className="display-name">{comment.displayName}</p>
+								<div className="user-profile">
+									<Avatar src={comment.photoURL} />
+									<p className="display-name">{comment.displayName}</p>
+								</div>
 								<div className="comment-date">
-									<p>date goes here</p>
+									<p>{comment.createdAt.toDate().toDateString()}</p>
 								</div>
 								<div className="comment-content">
 									<p>{comment.content}</p>
