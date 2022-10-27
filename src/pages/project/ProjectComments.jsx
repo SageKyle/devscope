@@ -50,6 +50,10 @@ export const ProjectComments = ({ project }) => {
 									<p>{comment.content}</p>
 								</div>
 							</div>
+							{/* TODO add a button for deleting comments here */}
+							{/* <button className="btn" >
+								Delete
+							</button> */}
 						</li>
 					))}
 			</ul>
