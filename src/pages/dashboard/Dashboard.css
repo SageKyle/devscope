@@ -4,6 +4,7 @@
 
 .project-filter nav {
 	display: flex;
+	justify-content: space-between;
 	padding: 1rem;
 	background-color: #fff;
 	border-radius: 0.4rem;

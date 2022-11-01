@@ -34,6 +34,8 @@ export const Dashboard = () => {
 							if (user.uid === currentUser.id) {
 								assignedToMe = true;
 							}
+
+							return assignedToMe;
 						});
 						return assignedToMe;
 

@@ -16,7 +16,7 @@ export const ProjectFilter = ({ currentFilter, changeFilter }) => {
 	return (
 		<div className="project-filter">
 			<nav>
-				<p>filter by </p>
+				<p>filter by: </p>
 				{filterList.map((filter) => (
 					<button
 						key={filter}
