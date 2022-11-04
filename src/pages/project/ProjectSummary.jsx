@@ -39,7 +39,7 @@ export const ProjectSummary = ({ project }) => {
 			</div>
 			{user.uid === project.createdBy.id && (
 				<button className="btn" onClick={handleDelete}>
-					Mark as complete
+					Delete Project
 				</button>
 			)}
 		</div>

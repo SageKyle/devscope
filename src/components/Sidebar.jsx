@@ -18,7 +18,7 @@ export const Sidebar = () => {
 	const menuRef = useRef();
 
 	const handleRef = () => {
-		// because the open icon already has a hidden class, by toggling both of them at once, they will not show the same time
+		// because the sidebar is hidden initially, by toggling both of them at once, they will not show the same time
 		SidebarRef.current.classList.toggle('hidden');
 		menuRef.current.classList.toggle('hidden');
 	};
@@ -26,10 +26,10 @@ export const Sidebar = () => {
 	return (
 		<>
 			{/* icon to display users' list */}
-			<div className="logo menu-btn hidden" ref={menuRef} onClick={handleRef}>
+			<div className="logo menu-btn" ref={menuRef} onClick={handleRef}>
 				<img src={Menu} alt="menu" />
 			</div>
-			<div className="sidebar" ref={SidebarRef}>
+			<div className="sidebar hidden" ref={SidebarRef}>
 				{/* icon to close the users' list */}
 				<div className="close-btn" onClick={handleRef}>
 					<img src={CloseIcon} className="logo" alt="close" />

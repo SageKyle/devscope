@@ -1,4 +1,6 @@
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { useState } from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 import { Avatar } from '../../components/Avatar';
 import { timestamp } from '../../firebase/config';
 import { useAuthContext } from '../../hooks/useAuthContext';
@@ -24,6 +26,15 @@ export const ProjectComments = ({ project }) => {
 		await updateDocument(project.id, {
 			comments: [...project.comments, commentToAdd],
 		});
+		// TODO and a promise notification here
+
+		toast.success('new comment added successfully!', {
+			// Change colors of success/error/loading icon
+			iconTheme: {
+				primary: '#8d69f1',
+				secondary: '#fff',
+			},
+		});
 
 		if (!response.error) {
 			setNewComment('');
@@ -44,16 +55,17 @@ export const ProjectComments = ({ project }) => {
 									<p className="display-name">{comment.displayName}</p>
 								</div>
 								<div className="comment-date">
-									<p>{comment.createdAt.toDate().toDateString()}</p>
+									<p>
+										{formatDistanceToNow(comment.createdAt.toDate(), {
+											addSuffix: true,
+										})}
+									</p>
 								</div>
 								<div className="comment-content">
 									<p>{comment.content}</p>
 								</div>
 							</div>
 							{/* TODO add a button for deleting comments here */}
-							{/* <button className="btn" >
-								Delete
-							</button> */}
 						</li>
 					))}
 			</ul>
@@ -69,6 +81,7 @@ export const ProjectComments = ({ project }) => {
 				</label>
 				<button className="btn">Add comment</button>
 			</form>
+			<Toaster />
 		</div>
 	);
 };

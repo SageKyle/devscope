@@ -16,7 +16,7 @@ export const OnlineUsers = () => {
 	const toggleRef = useRef();
 
 	const handleRef = () => {
-		// because the open icon already has a hidden class, by toggling both of them at once, they will not show the same time
+		// because the users' menu is hidden initially, by toggling both of them at once, they will not show the same time
 		usersRef.current.classList.toggle('hidden');
 		toggleRef.current.classList.toggle('hidden');
 	};
@@ -25,13 +25,13 @@ export const OnlineUsers = () => {
 		<>
 			{/* icon to display users' list */}
 			<div
-				className="logo menu-btn users-btn hidden"
+				className="logo menu-btn users-btn"
 				onClick={handleRef}
 				ref={toggleRef}
 			>
 				<img src={Users} alt="toggle list of users" />
 			</div>
-			<div className="user-list" ref={usersRef}>
+			<div className="user-list hidden" ref={usersRef}>
 				{/* icon to close the users' list */}
 				<div className="hide-users" onClick={handleRef}>
 					<img src={CloseIcon} alt="hide list of users" />

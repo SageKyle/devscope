@@ -13,7 +13,7 @@ export const Navbar = () => {
 		<div className="navbar">
 			<ul>
 				<li className="logo">
-					<img src={Logo} alt="devscope synergy logo" />
+					<img src={Logo} alt="devscope" />
 					<span>DevScope Synergy</span>
 				</li>
 				{!user && (
