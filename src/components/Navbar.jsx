@@ -12,9 +12,11 @@ export const Navbar = () => {
 	return (
 		<div className="navbar">
 			<ul>
-				<li className="logo">
-					<img src={Logo} alt="devscope" />
-					<span>DevScope Synergy</span>
+				<li className="logo" title="back to home">
+					<Link to={'/'}>
+						<img src={Logo} alt="devscope" />
+						<span>DevScope Synergy</span>
+					</Link>
 				</li>
 				{!user && (
 					<>

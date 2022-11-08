@@ -7,6 +7,7 @@ import { OnlineUsers } from './components/OnlineUsers';
 import { Sidebar } from './components/Sidebar';
 import { Create } from './pages/create/Create';
 import { Dashboard } from './pages/dashboard/Dashboard';
+import { Error } from './pages/error/Error';
 import { Login } from './pages/login/Login';
 import { Project } from './pages/project/Project';
 import { Signup } from './pages/signup/Signup';
@@ -39,6 +40,7 @@ function App() {
 								element={user ? <Project /> : <Login />}
 								path="/projects/:id"
 							/>
+							<Route element={<Error />} path="*" />
 						</Routes>
 					</div>
 					{user && <OnlineUsers />}

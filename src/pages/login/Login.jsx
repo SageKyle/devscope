@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
@@ -24,7 +25,16 @@ export const Login = () => {
 	};
 
 	return (
-		<form className="auth-form" onSubmit={handleSubmit}>
+		<motion.form
+			className="auth-form"
+			onSubmit={handleSubmit}
+			initial={{ x: -100 }}
+			animate={{ x: 0 }}
+			transition={{
+				type: 'spring',
+				stiffness: 190,
+			}}
+		>
 			<h2>Log In</h2>
 			<label>
 				<span>Email Address:</span>
@@ -57,6 +67,6 @@ export const Login = () => {
 				don't have an account yet? <Link to="/signup">signup here</Link>
 			</p>
 			<Toaster />
-		</form>
+		</motion.form>
 	);
 };
