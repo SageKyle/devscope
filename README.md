@@ -19,11 +19,11 @@ A web app created with React for managing projects in a team.
 
 ### The challenge
 
-My goal was to create a project that combines all I've learned so far in React in a useful way
+My goal was to test my knowledge in React by building a project that brings together all I've learned so far in order to know which area I need to work on.
 
 ### Links
 
-- Live Site URL: [Here](https://devscope.netlify.app/)
+- Live Site URL: [Here](https://devscope-synergy.web.app/)
 - Source code URL: [Here](https://github.com/SageKyle/devscope)
 
 ## My process
