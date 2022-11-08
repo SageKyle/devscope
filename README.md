@@ -23,7 +23,7 @@ My goal was to create a project that combines all I've learned so far in React i
 
 ### Links
 
-- Live Site URL: [Here](https://devscope-synergy.web.app/)
+- Live Site URL: [Here](https://devscope.netlify.app/)
 - Source code URL: [Here](https://github.com/SageKyle/devscope)
 
 ## My process
