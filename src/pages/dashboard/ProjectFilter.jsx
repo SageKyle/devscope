@@ -4,7 +4,7 @@ const filterList = [
 	'development',
 	'design',
 	'marketing',
-	'sales',
+	'writing',
 ];
 
 export const ProjectFilter = ({ currentFilter, changeFilter }) => {

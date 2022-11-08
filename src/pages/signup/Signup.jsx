@@ -17,13 +17,13 @@ export const Signup = () => {
 	const { signup, isPending, error } = useSignup();
 	const navigate = useNavigate();
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		// const signupResponse = signup(email, password, displayName, thumbnail);
-		console.log('signup successful,');
 		// TODO add a notification modal here
 		toast.promise(
-			signup(email, password, displayName, thumbnail),
+			// signup the user
+			await signup(email, password, displayName, thumbnail),
 			{
 				loading: 'Creating your account',
 				success: 'Account created successfully! Welcome',
@@ -44,15 +44,18 @@ export const Signup = () => {
 		setThumbnail(null);
 		let selected = e.target.files[0];
 
+		// make the input field required
 		if (!selected) {
 			setThumbnailError('Please select a file');
 			return;
 		}
+		// make sure the file is an image
 		if (!selected.type.includes('image')) {
 			setThumbnailError('Selected file must be an image');
 			return;
 		}
 
+		// set a max size for the file
 		if (selected.size > 100000) {
 			setThumbnailError('Image file size must be less than 100kb');
 			return;
@@ -60,7 +63,6 @@ export const Signup = () => {
 
 		setThumbnailError(null);
 		setThumbnail(selected);
-		console.log('Thumbnail updated');
 	};
 
 	return (

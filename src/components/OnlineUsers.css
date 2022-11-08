@@ -60,7 +60,8 @@
 		top: 0;
 		right: 0;
 		bottom: 0;
-		max-width: 30%;
+		min-width: fit-content;
+		max-width: 35%;
 		z-index: 100;
 	}
 

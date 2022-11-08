@@ -15,10 +15,20 @@ export const Login = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		login(email, password);
-		console.log('log in successful,');
 		// TODO turn this notification to a promise
-		toast.success('login successful');
+		toast.promise(
+			login(email, password),
+			{
+				loading: 'logging in',
+				success: 'login successful! Welcome',
+				error: 'Unable to login at the moment',
+			},
+			{
+				style: {
+					minWidth: '250px',
+				},
+			}
+		);
 		setTimeout(() => {
 			navigate('/');
 		}, 3000);

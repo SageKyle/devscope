@@ -90,3 +90,10 @@
 		display: block;
 	}
 }
+
+/* 600px */
+@media only screen and (max-width: 37.7em) {
+	.sidebar {
+		min-width: 35%;
+	}
+}
