@@ -5,7 +5,8 @@ service cloud.firestore {
     // - any authenticated user can read and create
     // - only users who created a document can update it (user's id match)
     match /users/{user_id} {
-      allow read, create: if request.auth != null;
+      // REMEMBER --> changed create to write
+      allow read, write: if request.auth != null;
       allow update: if request.auth.uid == user_id;
     }
     // projects collection
