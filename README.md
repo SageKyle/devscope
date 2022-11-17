@@ -24,7 +24,7 @@ My goal was to test my knowledge in React by building a project that brings toge
 ### Links
 
 - Live Site URL: [Here](https://devscope-synergy.web.app/)
-- Source code URL: [Here](https://github.com/SageKyle/devscope)
+<!-- - Source code URL: [Here](https://github.com/SageKyle/devscope) -->
 
 ## My process
 

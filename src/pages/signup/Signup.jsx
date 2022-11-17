@@ -19,8 +19,6 @@ export const Signup = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// const signupResponse = signup(email, password, displayName, thumbnail);
-		// TODO add a notification modal here
 		toast.promise(
 			// signup the user
 			await signup(email, password, displayName, thumbnail),
@@ -56,8 +54,8 @@ export const Signup = () => {
 		}
 
 		// set a max size for the file
-		if (selected.size > 100000) {
-			setThumbnailError('Image file size must be less than 100kb');
+		if (selected.size > 300000) {
+			setThumbnailError('Image file size must be less than 300kb');
 			return;
 		}
 
@@ -69,7 +67,7 @@ export const Signup = () => {
 		<motion.form
 			className="auth-form"
 			onSubmit={handleSubmit}
-			initial={{ x: -100 }}
+			initial={{ x: 100 }}
 			animate={{ x: 0 }}
 			transition={{
 				type: 'spring',

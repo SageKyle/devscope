@@ -48,7 +48,7 @@ export const ProjectComments = ({ project }) => {
 			<ul>
 				{project.comments.length > 0 &&
 					project.comments.map((comment) => (
-						<li key={comment.id}>
+						<li key={comment.id} className="comment">
 							<div className="comment-author">
 								<div className="user-profile">
 									<Avatar src={comment.photoURL} />
