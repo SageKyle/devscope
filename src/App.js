@@ -20,7 +20,6 @@ function App() {
 	return (
 		<div className="App">
 			{authIsReady && (
-				// TODO setup protected routes
 				<BrowserRouter>
 					{user && <Sidebar />}
 					<div className="container">

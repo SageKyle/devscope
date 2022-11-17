@@ -40,38 +40,8 @@
 	margin-top: 0.2rem;
 }
 
-.hide-users {
-	display: none;
-}
-
-.users-btn {
-	margin-left: auto;
-	margin-right: 0;
-}
-
-.hide-users img {
-	height: 100%;
-}
-
 @media only screen and (max-width: 62em) {
 	.user-list {
-		display: block;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		min-width: fit-content;
-		max-width: 35%;
-		z-index: 100;
-	}
-
-	.hide-users {
-		aspect-ratio: 1/1;
-		height: 2rem;
-		position: absolute;
-		display: block;
-		top: 2rem;
-		left: 2rem;
-		cursor: pointer;
+		display: none;
 	}
 }
