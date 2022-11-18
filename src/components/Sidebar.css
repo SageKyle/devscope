@@ -59,7 +59,7 @@
 @media only screen and (max-width: 62em) {
 	.sidebar {
 		min-width: 4rem;
-		width: 6rem;
+		max-width: 8rem;
 	}
 
 	.sidebar .user {
@@ -73,6 +73,11 @@
 
 	.sidebar__text {
 		display: none;
+	}
+
+	.user__greeting {
+		font-size: 2vw;
+		margin-top: 2rem;
 	}
 
 	.sidebar .links {

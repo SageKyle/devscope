@@ -16,7 +16,10 @@ export const Sidebar = () => {
 			<div className="sidebar-content">
 				<div className="user">
 					<Avatar src={user.photoURL} />
-					<p className="sidebar__text">Hey {user.displayName}</p>
+					<p className="user__greeting">
+						<span className="sidebar__text">Hey </span>
+						{user.displayName}
+					</p>
 				</div>
 
 				<nav className="links">
