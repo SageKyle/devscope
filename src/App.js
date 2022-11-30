@@ -8,6 +8,7 @@ import { Sidebar } from './components/Sidebar';
 import { Create } from './pages/create/Create';
 import { Dashboard } from './pages/dashboard/Dashboard';
 import { Error } from './pages/error/Error';
+import { Home } from './pages/home/Home';
 import { Login } from './pages/login/Login';
 import { Project } from './pages/project/Project';
 import { Signup } from './pages/signup/Signup';
@@ -25,7 +26,11 @@ function App() {
 					<div className="container">
 						<Navbar />
 						<Routes>
-							<Route element={user ? <Dashboard /> : <Login />} path="/" />
+							<Route element={<Home />} path="/" />
+							<Route
+								element={user ? <Dashboard /> : <Login />}
+								path="/dashboard"
+							/>
 							<Route element={user ? <Create /> : <Login />} path="/create" />
 							<Route
 								element={!user ? <Login /> : <Dashboard />}
