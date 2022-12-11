@@ -16,13 +16,14 @@ import { Signup } from './pages/signup/Signup';
 import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
+	const homepage = window.location.pathname === '/';
 	const { user, authIsReady } = useAuthContext();
 
 	return (
 		<div className="App">
 			{authIsReady && (
 				<BrowserRouter>
-					{user && <Sidebar />}
+					{user && !homepage && <Sidebar />}
 					<div className="container">
 						<Navbar />
 						<Routes>
@@ -47,7 +48,7 @@ function App() {
 							<Route element={<Error />} path="*" />
 						</Routes>
 					</div>
-					{user && <OnlineUsers />}
+					{user && !homepage && <OnlineUsers />}
 				</BrowserRouter>
 			)}
 		</div>

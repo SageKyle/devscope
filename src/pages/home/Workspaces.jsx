@@ -3,7 +3,7 @@ import WorkspaceImg from '../../assets/workspace.svg';
 export const Workspace = () => {
 	return (
 		<section className="workspace">
-			<h4 className="workspace__intro">coming soon</h4>
+			<h4 className="workspace__intro">coming soon...</h4>
 			<div className="workspace__main">
 				<img
 					src={WorkspaceImg}
