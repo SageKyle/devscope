@@ -38,6 +38,12 @@ ul {
 	list-style-type: none;
 }
 
+a,
+a:link {
+	text-decoration: none;
+	color: unset;
+}
+
 /* layout */
 .page-title {
 	font-size: 2rem;
@@ -46,6 +52,7 @@ ul {
 }
 
 .btn {
+	width: fit-content;
 	background: #fff;
 	padding: 0.8rem 1.2rem;
 	border-radius: 0.4rem;

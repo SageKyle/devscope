@@ -23,11 +23,15 @@ export const Navbar = () => {
 				{!user && (
 					<>
 						<li>
-							<Link to={'/login'}>Login</Link>
+							<Link to={'/login'} className="navbar__link">
+								Login
+							</Link>
 						</li>
 
 						<li>
-							<Link to={'/signup'}>signup</Link>
+							<Link to={'/signup'} className="navbar__link">
+								signup
+							</Link>
 						</li>
 					</>
 				)}

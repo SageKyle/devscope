@@ -13,8 +13,19 @@
 
 .navbar a {
 	color: #333;
-	text-decoration: none;
 	margin-right: 2rem;
+}
+
+.navbar__link {
+	display: inline-block;
+	padding: 1rem;
+	border-radius: 1rem;
+	transition: all ease-in-out 0.2s;
+}
+
+.navbar__link:hover {
+	color: #fff;
+	background-color: var(--primary-color);
 }
 
 .logo__container {
