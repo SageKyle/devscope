@@ -25,7 +25,7 @@ export const Sidebar = () => {
 				<nav className="links">
 					<ul>
 						<li>
-							<NavLink end to="/">
+							<NavLink end to="/dashboard">
 								<img src={DashboardIcon} alt="dashboard" />
 								<span className="sidebar__text">Dashboard</span>
 							</NavLink>
