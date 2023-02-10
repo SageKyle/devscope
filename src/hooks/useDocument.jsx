@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import toast from 'react-hot-toast';
 import { projectFirestore } from '../firebase/config';
 
 export const useDocument = (collection, id) => {
