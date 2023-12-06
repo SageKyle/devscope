@@ -1,19 +1,19 @@
 // Styles and images
-import { Link } from 'react-router-dom';
-import Logo from '../assets/logo.svg';
-import { useAuthContext } from '../hooks/useAuthContext';
-import { useLogout } from '../hooks/useLogout';
-import './Navbar.css';
+import { Link } from 'react-router-dom'
+import Logo from '../assets/logo.svg'
+import { useAuthContext } from '../hooks/useAuthContext'
+import { useLogout } from '../hooks/useLogout'
+import './Navbar.css'
 
 export const Navbar = () => {
-	const { logout, isPending } = useLogout();
-	const { user } = useAuthContext();
+	const { logout, isPending } = useLogout()
+	const { user } = useAuthContext()
 
 	return (
 		<div className="navbar">
 			<ul>
 				<li className="logo__container" title="back to home">
-					<Link to={'/'} className="logo">
+					<Link to={'/dashboard'} className="logo">
 						<img src={Logo} alt="devscope" />
 						<span>
 							DevScope<span className="title-desc"> Synergy</span>
@@ -51,5 +51,5 @@ export const Navbar = () => {
 				)}
 			</ul>
 		</div>
-	);
-};
+	)
+}
